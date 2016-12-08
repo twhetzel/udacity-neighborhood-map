@@ -31,7 +31,7 @@ function loadData() {
 
     // Build New York Times Web service call
     var nytimesUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + streetName + "&sort=newest";
-    var nytApiKey = "c0455864d47141d29259369461fa578c";
+    var nytApiKey = "c0455864d47141d29259369461fa578";
 
     nytimesUrl += '&' + $.param({
         'api-key': nytApiKey
@@ -47,6 +47,9 @@ function loadData() {
             $('#form-container').submit(loadData);
             $nytElem.append('<li class="article">' + '<a href="' + article.web_url + '">' + article.headline.main + '</a>' + '<p>' + article.snippet + '</p>' + '</li>');
         };
+
+    }).error(function(e) {
+        $nytHeaderElem.text("New York Times Articles Could Not Be Loaded");
     });
 
 
