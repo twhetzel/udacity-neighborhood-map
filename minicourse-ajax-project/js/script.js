@@ -31,7 +31,7 @@ function loadData() {
 
     // Build New York Times Web service call
     var nytimesUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + streetName + "&sort=newest";
-    var nytApiKey = "c0455864d47141d29259369461fa578";
+    var nytApiKey = "c0455864d47141d29259369461fa578c";
 
     nytimesUrl += '&' + $.param({
         'api-key': nytApiKey
